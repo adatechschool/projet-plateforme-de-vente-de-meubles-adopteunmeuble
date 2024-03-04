@@ -38,9 +38,9 @@ id, nom, prénom, email, mot de passe (+ sécurisation)
 # Organisation
 
 ### Répartition des équipes (semaine 1) : 
-Back : Nadège, Apolline, Nicolas
-Front : Marie, Axel, Angie, Sam
-TechLead : Sam
+- Back : Nadège, Apolline, Nicolas
+- Front : Marie, Axel, Angie, Sam
+- TechLead : Sam
 
 ### Rituels et fonctionnement : 
 Daily en début de journée par sous-équipe (5 minutes pour objectifs de la journée)
