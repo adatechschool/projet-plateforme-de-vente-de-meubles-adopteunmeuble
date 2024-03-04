@@ -1,0 +1,15 @@
+{
+  "name": "projet-plateforme-de-vente-de-meubles-adopteunmeuble",
+  "version": "1.0.0",
+  "description": "Une page de sommaire / choix parmi les meubles\r Accès aux fiches clients\r Page \"admin\" pour gestion du stock et des produits\r comptes utilisateurs / authentification",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
