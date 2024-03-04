@@ -43,7 +43,7 @@ id, nom, prénom, email, mot de passe (+ sécurisation)
 - TechLead : Sam
 
 ### Rituels et fonctionnement : 
-Daily en début de journée par sous-équipe (5 minutes pour objectifs de la journée)
-Point de fin de journée commun plus poussé pour partage des avancements respectifs
-Git : création branches et autres au fur et à mesure, pas de push en direct sur le mail 😉 / création répo ok
-Utilisation de JIRA pour le suivi des tâches / création espace ok
+- Daily en début de journée par sous-équipe (5 minutes pour objectifs de la journée)
+- Point de fin de journée commun plus poussé pour partage des avancements respectifs
+- Git : création branches et autres au fur et à mesure, pas de push en direct sur le main 😉
+- Utilisation de JIRA pour le suivi des tâches
