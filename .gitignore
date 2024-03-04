@@ -1,0 +1,26 @@
+####
+# Fichiers de sauvegarde
+*~
+*.swp
+# Fichiers de compilation
+*.o
+*.out
+*.exe
+# Fichiers de configuration
+*.log
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+# Dossiers
+node_modules/
+build/
+dist/
+.cache/
+# Divers
+api.js
+####
+.vscode/
+.idea/
+00_archives/
