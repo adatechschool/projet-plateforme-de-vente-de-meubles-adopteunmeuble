@@ -7,7 +7,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 4fr 1fr 1fr;
   height: 4em;
-  width: 100vw;
+  width: 100%;
   background-color: blueviolet;
   color: beige;
 
