@@ -47,3 +47,37 @@ id, nom, prénom, email, mot de passe (+ sécurisation)
 - Point de fin de journée commun plus poussé pour partage des avancements respectifs
 - Git : création branches et autres au fur et à mesure, pas de push en direct sur le main 😉
 - Utilisation de JIRA pour le suivi des tâches
+
+
+****************************
+
+# Setup de la partie BackEnd : 
+### Installation Node Express (paquet inclu dans le package.json) : 
+- npm install express
+- Données de connexions présentes dans le fichier server.js
+
+### Installation MySQL (NON inclu dans le package.json) : 
+- Télécharger puis installer MySQL : https://dev.mysql.com/downloads/installer/
+- Paramétrage pour résoudre un bug de connexion dans le MySQL Workbench :
+
+--> appliquer le correctif à 2'09 de la vidéo https://www.youtube.com/watch?v=yq1CpK0Tjo8
+
+### Installation dotenv + sequelize (paquets inclus dans le package.json) : 
+- Sequelize (permet la connexion vers base SQL depuis Nodejs:
+
+--> commande d'install : npm install sequelize
+
+--> favoriser le combo mysql2/sequelize vs mysql (pb de sécurité non patché sur mysql)
+
+- dotenv : permet de gérer les fichiers de variables d'environnement (stockage des mots de passe par exemple)
+
+--> commande d'install : npm install dotenv
+
+--> une fois le paquet installé, node va savoir gérer la récupération des variables d'environnement (via l'instruction process.env.VAR_NAME) 
+
+- créer un fichier '.env' avec les informations suivantes : 
+
+--> DB_NAME= **nom de la db**
+--> DB_USER=root
+--> DB_PASSWORD=**mdp de la db**
+--> DB_HOST=localhost
