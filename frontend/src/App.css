@@ -14,17 +14,32 @@ body {
 }
 
 .container-g {
-  height: 70vh;
+  height: 85vh;
   width: 100vw;
 }
 
 #footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 4em;
-  padding-left: 3em;
-  height: 4em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  justify-content: center;
   width: 100vw;
-  background-color: blueviolet;
+  bottom: 0;
+  padding: 1.5em;
+  height: #em;
+  background-color: rgb(73, 65, 81);
   color: beige;
+}
+
+#footer a {
+  display: inline-block;
+  margin: 0 10px;
+  color:rgb(211, 174, 245);
+}
+
+#footer p {
+  display: inline-block;
+  margin: 0 10px;
+
+
 }
