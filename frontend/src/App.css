@@ -1,16 +1,30 @@
 body {
+  max-width: 100%;
   margin: 0;
-  padding: 0;
+
 }
 
 #header {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr 1fr;
-  height: 4em;
+  grid-template-columns: 4fr 8fr 3fr 1fr;
+  justify-items: center;
+  align-items: center;
   width: 100vw;
   background-color: blueviolet;
   color: beige;
+}
 
+#logo-h {
+  justify-self: left;
+  padding-left: 2em;
+}
+
+#wishlist, #user-account {
+  justify-self: right;
+}
+
+#user-account {
+  padding-right: 2em;
 }
 
 .container-g {
@@ -18,28 +32,22 @@ body {
   width: 100vw;
 }
 
+/*FOOTER*/
+
 #footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
   justify-content: center;
-  width: 100vw;
+  align-items: center;
   bottom: 0;
   padding: 1.5em;
-  height: #em;
   background-color: rgb(73, 65, 81);
   color: beige;
 }
 
 #footer a {
-  display: inline-block;
-  margin: 0 10px;
   color:rgb(211, 174, 245);
 }
 
-#footer p {
-  display: inline-block;
-  margin: 0 10px;
-
-
-}
+/*FIN FOOTER*/
