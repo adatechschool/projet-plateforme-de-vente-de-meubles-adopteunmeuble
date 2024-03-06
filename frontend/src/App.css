@@ -12,3 +12,19 @@ body {
   color: beige;
 
 }
+
+.container-g {
+  height: 70vh;
+  width: 100vw;
+}
+
+#footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 4em;
+  padding-left: 3em;
+  height: 4em;
+  width: 100vw;
+  background-color: blueviolet;
+  color: beige;
+}
