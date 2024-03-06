@@ -1,32 +1,23 @@
 import ProductDetails from "./productDetails.jsx";
 import BuyBtn from "./buyButton.jsx";
 import data from "../../../../bouchon-data.json";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 
-function Product({ productId }) {
-    let id;
+export async function loadProductData ({params}) {
+    // insérer ici une requête fetch à la place de la ligne suivante :
+    const [product] = data.products.filter((product) => product["id"] === parseInt(params.productId));
+    return product;
+}
 
-    useEffect(async () => {
-        id = useParams();
-        console.log(id);
-    });
+function Product() {
 
-    function getProductData(productId) {
-        let [product] = data.products.filter(
-            (product) => product["id"] === productId
-        );
-        return product;
-    }
-
-    console.log(getProductData(productId));
-
+    const productData = useLoaderData()
+    
     return (
         <div id="product">
             <div id="placeholderCarousel"></div>
             <div id="productMainSection">
-                <ProductDetails productData={getProductData(productId)} />
-                <p>{id}</p>
+                <ProductDetails productData={productData} />
                 <BuyBtn />
             </div>
         </div>
