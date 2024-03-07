@@ -7,7 +7,7 @@ function ProductDetails({ productData }) {
     );
 
     const details = [
-        { label: "Prix", value: productData.price },
+        { label: "Prix", value: `${productData.price} €` },
         { label: "Categorie", value: productData.category },
         { label: "Description", value: productData.description },
         { label: "Dimensions", value: productData.dimensions },

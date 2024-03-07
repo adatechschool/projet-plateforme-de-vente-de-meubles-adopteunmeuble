@@ -1,17 +1,13 @@
 import './App.css'
-import Header from './components/header.jsx'
-import Footer from './components/footer.jsx'
-import Carrousel from './components/product-page/carrousel';
-import Product from './components/product-page/product.jsx';
+
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
-    <Header/>
-    <div className="container-g">
-      <Product />
-    </div>
-    <Footer/>
+   
+    <Outlet/>
+ 
     </>
   )
 }
