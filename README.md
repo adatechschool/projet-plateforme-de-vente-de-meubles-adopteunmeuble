@@ -51,7 +51,12 @@ id, nom, prénom, email, mot de passe (+ sécurisation)
 
 ****************************
 
-# Setup de la partie BackEnd : 
+# Setup de la partie BackEnd :
+
+### Outils divers :
+- extension Better Comment sur VS Code
+- Postman
+
 ### Installation Node Express (paquet inclu dans le package.json) : 
 - npm install express
 - Données de connexions présentes dans le fichier server.js
@@ -60,7 +65,8 @@ id, nom, prénom, email, mot de passe (+ sécurisation)
 - Télécharger puis installer MySQL : https://dev.mysql.com/downloads/installer/
 - Paramétrage pour résoudre un bug de connexion dans le MySQL Workbench :
 
---> appliquer le correctif à 2'09 de la vidéo https://www.youtube.com/watch?v=yq1CpK0Tjo8
+--> appliquer le correctif (pour les Windows) à 2'09 de la vidéo https://www.youtube.com/watch?v=yq1CpK0Tjo8
+--> Sur Apple : vérifier que le système est à jour, et attention au choix de la version de téléchargement (x86 ou ARM)
 
 ### Installation dotenv + sequelize (paquets inclus dans le package.json) : 
 - Sequelize (permet la connexion vers base SQL depuis Nodejs:
@@ -71,13 +77,12 @@ id, nom, prénom, email, mot de passe (+ sécurisation)
 
 - dotenv : permet de gérer les fichiers de variables d'environnement (stockage des mots de passe par exemple)
 
---> commande d'install : npm install dotenv
-
 --> une fois le paquet installé, node va savoir gérer la récupération des variables d'environnement (via l'instruction process.env.VAR_NAME) 
 
-- créer un fichier '.env' avec les informations suivantes : 
+### Créer un fichier '.env' avec les informations suivantes : 
 
 --> DB_NAME= **nom de la db**
 --> DB_USER=root
 --> DB_PASSWORD=**mdp de la db**
 --> DB_HOST=localhost
+--> DB_PORT=3306
