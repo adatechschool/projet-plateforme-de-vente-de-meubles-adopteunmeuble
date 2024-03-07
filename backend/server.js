@@ -1,31 +1,32 @@
-// require("dotenv").config({ debug: true });
+require("dotenv").config({ debug: true });
 const express = require("express");
 const app = express();
-const connectDB = require("./db");
 const port = 3000;
-const sequelize = require("./db");
+const { Sequelize } = require("sequelize");
+const meublesRouter = require("./routes/meubles.routes");
 
-// Connect to the database
-// connectDB;
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  { dialect: "mysql", host: process.env.DB_HOST, port: process.env.DB_PORT }
+);
 
-// Define a simple route to test the database connection
-// app.get("/", async (req, res) => {
-//   try {
-//     const result = await sequelize.query("SELECT * FROM actor", {
-//       type: sequelize.QueryTypes.SELECT,
-//     });
-//     res.status(200).json(result);
-//   } catch (error) {
-//     console.error(
-//       "Impossible de récupérer les données, erreur suivante :",
-//       error
-//     );
-//     res
-//       .status(500)
-//       .json(
-//         "Une erreur inattendue s'est produite dans la récupération des données."
-//       );
-//   }
-// });
+//Middleware pour gérer les données au format  et les url encodées
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+//Importer les routes exportées depuis le fichier meubles.routes.js
+app.use("/", meublesRouter);
+
+// Middleware for handling errors
+app.use((err, req, res, next) => {
+  if (err) {
+    console.error(err.stack);
+    res.status(500).send("Something broke!");
+  } else {
+    next();
+  }
+});
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
