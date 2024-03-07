@@ -1,23 +1,32 @@
+require("dotenv").config({ debug: true });
 const express = require("express");
-const sequelize = require("./config/db");
 const app = express();
-const dotenv = require("dotenv").config();
 const port = 3000;
+const { Sequelize } = require("sequelize");
+const meublesRouter = require("./routes/meubles.routes");
 
-//Connexion à la DB MySQL
-sequelize
-  .authenticate()
-  .then(() => console.log("Connecté à la base de données MySQL !"))
-  .catch((error) =>
-    console.error("Impossible de se connecter à la base de données :", error)
-  );
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  { dialect: "mysql", host: process.env.DB_HOST, port: process.env.DB_PORT }
+);
 
 //Middleware pour gérer les données au format  et les url encodées
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//Importer les routes "get" exportées depuis le fichier get.routes.js
-app.use("/meubles", require("./routes/meubles.routes"));
+//Importer les routes exportées depuis le fichier meubles.routes.js
+app.use("/", meublesRouter);
 
-//Ecouter le serveur et les requêtes entrantes
+// Middleware for handling errors
+app.use((err, req, res, next) => {
+  if (err) {
+    console.error(err.stack);
+    res.status(500).send("Something broke!");
+  } else {
+    next();
+  }
+});
+
 app.listen(port, () => console.log(`Server running on port ${port}`));
