@@ -57,6 +57,10 @@ id, nom, prénom, email, mot de passe (+ sécurisation)
 - extension Better Comment sur VS Code
 - Postman
 
+### Documentation
+- Sequelize : https://www.digitalocean.com/community/tutorials/how-to-use-sequelize-with-node-js-and-mysql
+- Tuto backend (intéressant au début jusqu'à 30 min) : https://www.youtube.com/watch?v=Iv4VIBEBHKk 
+
 ### Installation Node Express (paquet inclu dans le package.json) : 
 - npm install express
 - Données de connexions présentes dans le fichier server.js
