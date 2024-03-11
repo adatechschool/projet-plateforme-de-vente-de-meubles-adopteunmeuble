@@ -1,6 +1,6 @@
 import ProductDetails from "./productDetails.jsx";
 import BuyBtn from "./buyButton.jsx";
-import data from '../../../../bouchon-data.json'
+import data from '../../assets/bouchon-data.json'
 import Carrousel from "./carrousel.jsx";
 import { useLoaderData } from "react-router-dom";
 

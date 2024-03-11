@@ -1,8 +1,8 @@
 // Ici on veut afficher la grille qui contiendra les stickers, soit les mini fiches produit
-import data from "../../../../bouchon-data.json"
+import data from "../../assets/bouchon-data.json"
 
-import Sticker from "./sticker.jsx"
-import "./sticker.css"
+import Sticker from "./sticker"
+import "../../styles/components/sticker.css"
 
 function StickersGrid() {
     return (
