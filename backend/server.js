@@ -22,8 +22,7 @@ app.use("/products", meublesRouter);
 // Middleware for handling errors
 app.use((err, req, res, next) => {
   if (err) {
-    console.error(err.stack);
-    res.status(500).send("Something broke!");
+    res.status(err.statusCode || 500).json({ error: err.message});
   } else {
     next();
   }
