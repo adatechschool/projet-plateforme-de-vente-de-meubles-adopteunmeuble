@@ -1,5 +1,6 @@
 body {
   max-width: 100%;
+  max-height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -9,6 +10,7 @@ body {
   grid-template-columns: 4fr 8fr 3fr 1fr;
   justify-items: center;
   align-items: center;
+  place-items: center;
   width: 100vw;
   background-color: blueviolet;
   color: beige;
@@ -16,10 +18,19 @@ body {
 
 #logo-h {
   justify-self: left;
-  padding-left: 2em;
+  max-width: 100px;
+  padding: 0 30px;
 }
 
-#wishlist, #user-account {
+#website-title {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#wishlist,
+#user-account {
   justify-self: right;
 }
 
@@ -47,7 +58,7 @@ body {
 }
 
 #footer a {
-  color:rgb(211, 174, 245);
+  color: rgb(211, 174, 245);
 }
 
 /*FIN FOOTER*/
@@ -58,7 +69,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding:2em;
+  padding: 2em;
 }
 
 .slider-wrapper {
@@ -69,15 +80,14 @@ body {
 }
 
 .slider {
- display: flex;
- aspect-ratio: 16 / 9;
- overflow-x: auto;
- scroll-snap-type: x mandatory;
- scroll-behavior: smooth;
- box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
- border-radius: 0.25rem;
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.25rem;
 }
-
 
 .slider img {
   flex: 1 0 100%;
@@ -99,11 +109,10 @@ body {
   background-color: black;
   border-radius: 50%;
   opacity: 0.75;
-  transition: opacity ease 250ms ;
+  transition: opacity ease 250ms;
 }
 
 /* FIN CARRROUSEL*/
-
 
 #product {
   display: grid;
@@ -139,7 +148,6 @@ body {
 
 #productDetails {
   display: grid;
-
 }
 
 .detail {
@@ -157,15 +165,14 @@ body {
 }
 
 .buyBtn {
-    font-size: 1.8rem;
-    font-weight: 600;
-  
-    background-color: rgb(88, 173, 88);
-    color: white;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px rgb(0, 75, 0);
-  
-    margin-top: 1.5em;
-    padding: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
 
-  }
+  background-color: rgb(88, 173, 88);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgb(0, 75, 0);
+
+  margin-top: 1.5em;
+  padding: 1rem;
+}
