@@ -1,12 +1,14 @@
 const MeublesModel = require("../models/meubles.models");
 
 // * FONCTION OK !
-module.exports.getFurniture = async (req, res) => {
+module.exports.getFurniture = async (req, res, next) => {
     try {
+        throw new Error("erreur volontaire")
         const meubles = await MeublesModel.findAll();
         res.status(200).json(meubles);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        next(error)
+        // res.status(500).json({ error: error.message });
     }
 };
 

@@ -12,11 +12,6 @@ const {
 //Initialisation du routeur express
 const router = express.Router();
 
-// Error handling middleware
-router.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send({ error: "Something went wrong" });
-});
 
 //READ : renvoie un message JSON de tous les meubles
 router.get("/", getFurniture);
@@ -33,5 +28,11 @@ router.put("/:productId", updateFurniture);
 
 //DELETE : avec l'id spécifique du meuble.
 router.delete("/:productId", deleteFurniture);
+
+// Error handling middleware
+router.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: err });
+});
 
 module.exports = router;
