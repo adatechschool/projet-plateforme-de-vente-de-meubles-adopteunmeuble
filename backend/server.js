@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //Importer les routes exportées depuis le fichier meubles.routes.js
-app.use("/", meublesRouter);
+app.use("/products", meublesRouter);
 
 // Middleware for handling errors
 app.use((err, req, res, next) => {
