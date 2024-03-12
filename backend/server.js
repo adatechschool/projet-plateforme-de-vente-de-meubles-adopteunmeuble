@@ -21,11 +21,7 @@ app.use("/products", meublesRouter);
 
 // Middleware for handling errors
 app.use((err, req, res, next) => {
-  if (err) {
     res.status(err.statusCode || 500).json({ error: err.message});
-  } else {
-    next();
-  }
 });
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

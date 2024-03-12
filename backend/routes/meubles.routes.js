@@ -32,7 +32,7 @@ router.delete("/:productId", deleteFurniture);
 // Error handling middleware
 router.use((err, req, res, next) => {
   // console.error(err.stack);
-  res.status(err.statusCode || 500).json({ erreur: err.message});
+  res.status(err.cause || 500).json({ erreur: err.message });
 });
 
 module.exports = router;

@@ -1,12 +1,11 @@
 const MeublesModel = require("../models/meubles.models");
 
-// * FONCTION OK !
 module.exports.getFurniture = async (req, res, next) => {
   try {
     const meubles = await MeublesModel.findAll();
     res.status(200).json(meubles);
   } catch (error) {
-    next(error);
+    next(new Error("Impossible de récupérer les données", { cause: 404}));
     // res.status(500).json({ error: error.message });
   }
 };
@@ -15,11 +14,12 @@ module.exports.getFurnitureById = async (req, res) => {
   try {
     const furnitureItem = await MeublesModel.findByPk(req.params.productId);
     if (!furnitureItem) {
-      return res.status(404).json({ error: "Furniture item not found" });
+      throw new Error()
+      // res.status(404).json({ error: "Furniture item not found" });
     }
     res.send(furnitureItem);
   } catch (error) {
-    next(error);
+    next(new Error("Impossible de récupérer les données", { cause: 404}));
     // res.status(500).json({ error: error.message });
   }
 };
