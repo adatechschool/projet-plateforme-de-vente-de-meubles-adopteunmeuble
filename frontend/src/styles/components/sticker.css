@@ -32,13 +32,15 @@
 }
 
 .add-to-cart {
+  cursor: pointer;
   position: absolute;
-  bottom: 1px;
-  right: 1px;
+  bottom: 3px;
+  right: 3px;
   text-align: left;
-  background-color: #29a731;
+  background-color: pink;
   color: rgb(19, 19, 19);
-  font-size: 20px;
+  font-size: 15px;
+  outline: none;
 }
 
 #img-sticker {

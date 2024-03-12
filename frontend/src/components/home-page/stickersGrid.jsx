@@ -15,6 +15,6 @@ function StickersGrid() {
     )
 }
 
-
+  
 
 export default StickersGrid
