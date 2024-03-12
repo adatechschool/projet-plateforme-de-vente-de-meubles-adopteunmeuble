@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 const { Sequelize } = require("sequelize");
 const meublesRouter = require("./routes/meubles.routes");
+const adminRouter = require("./routes/users.routes");
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //Importer les routes exportées depuis le fichier meubles.routes.js
 app.use("/products", meublesRouter);
+app.use("/users", adminRouter);
 
 // Middleware for handling errors
 app.use((err, req, res, next) => {
