@@ -17,16 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //Importer les routes exportées depuis le fichier meubles.routes.js
-app.use("/", meublesRouter);
+app.use("/products", meublesRouter);
 
 // Middleware for handling errors
 app.use((err, req, res, next) => {
-  if (err) {
-    console.error(err.stack);
-    res.status(500).send("Something broke!");
-  } else {
-    next();
-  }
+    res.status(err.statusCode || 500).json({ error: err.message});
 });
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

@@ -1,0 +1,171 @@
+body {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  display: grid;
+  grid-template-columns: 4fr 8fr 3fr 1fr;
+  justify-items: center;
+  align-items: center;
+  width: 100vw;
+  background-color: blueviolet;
+  color: beige;
+}
+
+#logo-h {
+  justify-self: left;
+  padding-left: 2em;
+}
+
+#wishlist, #user-account {
+  justify-self: right;
+}
+
+#user-account {
+  padding-right: 2em;
+}
+
+.container-g {
+  height: 85vh;
+  width: 100vw;
+}
+
+/*FOOTER*/
+
+#footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  padding: 1.5em;
+  background-color: rgb(73, 65, 81);
+  color: beige;
+}
+
+#footer a {
+  color:rgb(211, 174, 245);
+}
+
+/*FIN FOOTER*/
+/* CARROUSEL */
+
+.container-carrousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding:2em;
+}
+
+.slider-wrapper {
+  position: relative;
+  text-align: center;
+  max-width: 42em;
+  margin: 0auto;
+}
+
+.slider {
+ display: flex;
+ aspect-ratio: 16 / 9;
+ overflow-x: auto;
+ scroll-snap-type: x mandatory;
+ scroll-behavior: smooth;
+ box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+ border-radius: 0.25rem;
+}
+
+
+.slider img {
+  flex: 1 0 100%;
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: black;
+  border-radius: 50%;
+  opacity: 0.75;
+  transition: opacity ease 250ms ;
+}
+
+/* FIN CARRROUSEL*/
+
+
+#product {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 10px;
+  justify-items: center;
+}
+
+#placeholderCarousel {
+  width: 500px;
+  height: 500px;
+
+  background-color: grey;
+
+  margin: 2em;
+  border: 2px solid black;
+}
+
+#productMainSection {
+  height: 500px;
+  width: 500px;
+  margin: 2em;
+  display: grid;
+  justify-content: left;
+}
+
+#productName {
+  font-size: 2rem;
+  font-weight: 600;
+
+  padding-bottom: 1rem;
+}
+
+#productDetails {
+  display: grid;
+
+}
+
+.detail {
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 4rem;
+
+  padding-left: 2em;
+}
+
+.detail-label {
+  justify-self: left;
+  font-weight: 600;
+}
+
+.buyBtn {
+    font-size: 1.8rem;
+    font-weight: 600;
+  
+    background-color: rgb(88, 173, 88);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgb(0, 75, 0);
+  
+    margin-top: 1.5em;
+    padding: 1rem;
+
+  }

@@ -1,0 +1,51 @@
+#stickers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sticker {
+    border: black solid 3px;
+    width:300px;
+	height:300px;
+    padding:10px;
+    margin:10px;
+    position: relative;
+}
+
+.product-name {
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.product-category {
+    text-align: right;
+    font-size: 10px;
+}
+
+.product-price {
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+}
+  
+.add-to-cart {
+    position : absolute;
+    bottom: 1px;
+    right: 1px;
+    text-align: left;
+    background-color: #29a731;
+    color: rgb(19, 19, 19);
+    font-size: 20px;
+}
+
+img{
+    
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 5%;
+    
+}
