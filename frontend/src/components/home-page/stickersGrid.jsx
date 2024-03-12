@@ -1,20 +1,30 @@
-// Ici on veut afficher la grille qui contiendra les stickers, soit les mini fiches produit
-import data from "../../assets/bouchon-data.json"
-
+// import data from "../../assets/bouchon-data.json"
 import Sticker from "./sticker"
 import "../../styles/components/sticker.css"
+import { useLoaderData } from "react-router-dom";
+
+// FETCH : Fonction qui va récupérer les données de la base pour ce composant précis : 
+export async function dataCatalogLoader() {
+    const response = await fetch(`http://localhost:3000/`);
+    const json = await response.json();
+    console.log(json);
+    return json;
+}
 
 function StickersGrid() {
+    const catalog = useLoaderData();
+    console.log(catalog);
+
     return (
         <div id="stickers-grid">
-            <Sticker product={data.products[0]}  />
-            <Sticker product={data.products[1]}  />
-            <Sticker product={data.products[2]}  />
-           
+            {catalog.map((product, index) => {
+                console.log(product);
+                console.log("index", index);
+                <Sticker key={index} product={product} />
+            })}
         </div>
     )
 }
 
-  
 
 export default StickersGrid

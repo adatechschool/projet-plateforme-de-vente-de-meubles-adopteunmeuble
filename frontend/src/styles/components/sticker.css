@@ -23,6 +23,7 @@
 .product-category {
   text-align: right;
   font-size: 10px;
+  background-color: rgba(211, 211, 211, 0.3);
 }
 
 .product-price {
@@ -31,21 +32,37 @@
   font-size: 18px;
 }
 
-.add-to-cart {
+.add-to-cart,
+.see-product {
   cursor: pointer;
+  text-align: left;
+  padding: 5px 10px;
+  color: black;
+  font-size: 13px;
+  outline: none;
+  transition: 0.5s ease;
   position: absolute;
   bottom: 3px;
+  border-radius: 5px;
+}
+.add-to-cart {
+  background-color: plum;
   right: 3px;
-  text-align: left;
+}
+.see-product {
   background-color: pink;
-  color: rgb(19, 19, 19);
-  font-size: 15px;
-  outline: none;
+  left: 3px;
+}
+
+.add-to-cart:hover,
+.see-product:hover {
+  border: whitesmoke solid 2px;
 }
 
 #img-sticker {
   width: 150px;
   height: 150px;
   position: absolute;
-  left: 5%;
+  left: 10%;
+  bottom: 15%;
 }
