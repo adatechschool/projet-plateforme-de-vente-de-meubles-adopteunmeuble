@@ -1,27 +1,34 @@
 const MeublesModel = require("../models/meubles.models");
+const Photo = require("../models/photo.models");
 
 module.exports.getFurniture = async (req, res, next) => {
   try {
     const meubles = await MeublesModel.findAll();
     res.status(200).json(meubles);
   } catch (error) {
-    next(new Error("Impossible de récupérer les données", { cause: 404}));
+    next(new Error("Impossible de récupérer les données", { cause: 404 }));
     // res.status(500).json({ error: error.message });
   }
 };
 
-module.exports.getFurnitureById = async (req, res) => {
-  try {
-    const furnitureItem = await MeublesModel.findByPk(req.params.productId);
-    if (!furnitureItem) {
-      throw new Error()
+module.exports.getFurnitureById = async (req, res, next) => {
+  // try {
+    const furnitureItem = await MeublesModel.findByPk(req.params.productId, { include: Photo});
+    // const photoItem = PhotoModel.findAll({where : { id_item : req.params.productId }})
+    const photos = await furnitureItem.getPhoto()
+    console.log("fdsfdsf");
+    if (!(furnitureItem)) {
+      throw new Error();
       // res.status(404).json({ error: "Furniture item not found" });
     }
-    res.send(furnitureItem);
-  } catch (error) {
-    next(new Error("Impossible de récupérer les données", { cause: 404}));
-    // res.status(500).json({ error: error.message });
-  }
+    res.json({
+      details: furnitureItem,
+      // photos : await photoItem
+    });
+  // } catch (error) {
+  //   next(new Error("Impossible de récupérer les données", { cause: 404 }));
+  //   // res.status(500).json({ error: error.message });
+  // }
 };
 
 module.exports.createFurniture = async (req, res) => {
@@ -89,7 +96,7 @@ module.exports.deleteFurniture = async (req, res) => {
     }
     res.send({ message: "Furniture item deleted successfully" });
   } catch (error) {
-    netx(error)
+    netx(error);
     // res.status(500).json({"error": error.message});
   }
 };

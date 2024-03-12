@@ -4,10 +4,12 @@ const { Sequelize, DataTypes } = require("sequelize");
 //Importation de la connexion à la base de données
 const sequelize = require("../config/createDB");
 
+
+
 const Photo = sequelize.define(
   "photo",
   {
-    id_item: {
+    furnitureId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -28,5 +30,7 @@ const Photo = sequelize.define(
     timestamps: false,
   }
 );
+
+
 
 module.exports = Photo;
