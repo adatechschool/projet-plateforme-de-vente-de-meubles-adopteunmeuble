@@ -1,0 +1,56 @@
+/* Header.css */
+
+:root {
+  --header-bg-color: #556e8d;
+  --header-text-color: #e30c25;
+  --title-color: #d36c18;
+  --title-hover-color: #c94d0a;
+  --text-shadow-color: rgba(0, 0, 0, 0.5);
+  --text-shadow-hover-color: rgba(0, 0, 0, 0.7);
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  padding: 20px;
+  border-radius: 5px;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+}
+
+#website-title {
+  color: var(--title-color);
+  font-size: 3em;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+    0 10px 0 #ccc, 0 11px 0 #ccc, 0 12px 0 #ccc,
+    0 20px 30px var(--text-shadow-color);
+}
+
+#website-title:hover {
+  color: var(--title-hover-color);
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+    0 10px 0 #ccc, 0 11px 0 #ccc, 0 12px 0 #ccc,
+    0 20px 30px var(--text-shadow-hover-color);
+}
+
+#logo-h {
+  width: 100px;
+  height: auto;
+}
+
+
+#wishlist,
+#user-account {
+  margin-left: 10px;
+  color: var(--title-color);
+}
+
+#wishlist {
+  margin-top: 10px;
+}
