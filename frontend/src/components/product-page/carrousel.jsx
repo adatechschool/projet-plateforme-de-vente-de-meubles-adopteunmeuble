@@ -16,7 +16,7 @@ function Carrousel() {
         const [images, setImages] = useState([
             {
                 id: 1,
-                src: "https://cdn.nvgallery.com/static/images/637238878af52216652386.jpg?width=700&height=500&fit=crop&quality=85,90",
+                src: "https://images.selency.com/4fca6d94-e81b-4c50-a3f9-43a0b7493783",
                 alt: "Description de l'image 1"
             },
             {
