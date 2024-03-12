@@ -1,7 +1,5 @@
 import React from 'react';
 import '../styles/components/header.css'; // Import the CSS file
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 function Header() {
@@ -56,9 +54,15 @@ function Header() {
                 </g>
                 </svg>
             <h2 id="website-title">Adopte un Meuble</h2>
-            <FontAwesomeIcon icon={faHeart} /> Wishlist
-            <FontAwesomeIcon icon={faUser} /> User Account
-        </div>
+                <div id="user-actions">
+                    <div class="icon-text-container">
+                    <img src="../../public/img/icons8-coeur-avec-pouls-50.png" alt="Wishlist" class="icon"/> Wishlist
+                    </div>
+                    <div class="icon-text-container">
+                        <img src="../../public/img/icons8-utilisateur-30.png" alt="User Account" class="icon"/> User Account
+                    </div>
+                </div>
+        </div>        
     );
 }
 
