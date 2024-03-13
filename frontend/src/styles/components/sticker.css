@@ -1,15 +1,52 @@
-#stickers-grid {
+.products {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-container {
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  background: rgba(211, 211, 211, 0.3);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.452);
+}
+
+label {
+  margin: 0 30px 0 10px;
+  cursor: pointer;
+}
+
+button {
+  margin: 0 auto 20px;
+  background: none;
+  padding: 4px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  border: whitesmoke solid 2px;
+  border-radius: 10px;
+  background-color: lightblue;
+}
+
+ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .sticker {
-  border: black solid 3px;
+  border: black solid 2px;
   width: 300px;
   height: 300px;
   padding: 10px;
   margin: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.452);
   position: relative;
 }
 
@@ -18,6 +55,7 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
+  padding: 5px;
 }
 
 .product-category {
@@ -30,6 +68,7 @@
   text-align: right;
   font-weight: bold;
   font-size: 18px;
+  padding: 5px;
 }
 
 .add-to-cart,
@@ -40,23 +79,21 @@
   color: black;
   font-size: 13px;
   outline: none;
-  transition: 0.5s ease;
+  transition: 0.2s ease;
   position: absolute;
-  bottom: 3px;
+  bottom: 0px;
   border-radius: 5px;
 }
 .add-to-cart {
   background-color: plum;
   right: 3px;
 }
+.add-to-cart img {
+  max-width: 30px;
+}
 .see-product {
   background-color: pink;
   left: 3px;
-}
-
-.add-to-cart:hover,
-.see-product:hover {
-  border: whitesmoke solid 2px;
 }
 
 #img-sticker {

@@ -5,14 +5,14 @@ import "../../styles/components/sticker.css"
 import { Link } from 'react-router-dom';
 
 function Sticker({product}) {
-  console.log("sticker.jsx=", product);
+
     return (
      <div className="sticker">
       <p className="product-name">{product.name}</p>
       <p className="product-category">Catégorie : {product.category}</p>
       <p className="product-price">{product.price} € TTC</p>
       <img id="img-sticker" src={product.picture} />
-      <button className="add-to-cart">Ajouter au panier</button>
+      <button className="add-to-cart"><img src="../../../public/img/117641.png" alt="" /></button>
       <Link to={`/products/${product.id}`}>
       <button className="see-product">Voir les détails</button>
       </Link>

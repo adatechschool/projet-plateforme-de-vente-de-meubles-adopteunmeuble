@@ -6,7 +6,7 @@ import Product,{ dataProductLoader } from './components/product-page/product.jsx
 import Header from './components/header.jsx'
 import Footer from './components/footer.jsx'
 import Home from './pages/Home.jsx';
-import StickersGrid, { dataCatalogLoader } from './components/home-page/stickersGrid.jsx'
+import StickersGrid from './components/home-page/stickersGrid.jsx'
 import "../src/styles/pages/App.css"
 
 
@@ -21,7 +21,6 @@ const router = createBrowserRouter([
   },
   {
     path: '/products',
-    loader: dataCatalogLoader,
     element: <StickersGrid />
   },
   {
