@@ -1,5 +1,6 @@
 body {
   max-width: 100%;
+  max-height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -9,17 +10,27 @@ body {
   grid-template-columns: 4fr 8fr 3fr 1fr;
   justify-items: center;
   align-items: center;
+  place-items: center;
   width: 100vw;
   background-color: blueviolet;
-  color: beige;
+  color: whitesmoke;
 }
 
 #logo-h {
   justify-self: left;
-  padding-left: 2em;
+  max-width: 100px;
+  padding: 0 30px;
 }
 
-#wishlist, #user-account {
+#website-title {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#wishlist,
+#user-account {
   justify-self: right;
 }
 
@@ -47,10 +58,11 @@ body {
 }
 
 #footer a {
-  color:rgb(211, 174, 245);
+  color: rgb(211, 174, 245);
 }
 
 /*FIN FOOTER*/
+
 /* CARROUSEL */
 
 .container-carrousel {
@@ -58,26 +70,24 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding:2em;
+  padding: 2em;
 }
 
 .slider-wrapper {
   position: relative;
   text-align: center;
   max-width: 42em;
-  margin: 0auto;
+  margin: 0 auto;
 }
 
 .slider {
- display: flex;
- aspect-ratio: 16 / 9;
- overflow-x: auto;
- scroll-snap-type: x mandatory;
- scroll-behavior: smooth;
- box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
- border-radius: 0.25rem;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.25rem;
 }
-
 
 .slider img {
   flex: 1 0 100%;
@@ -93,28 +103,28 @@ body {
   transform: translateX(-50%);
   z-index: 1;
 }
+
 .slider-nav a {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 1rem;
+  height: 1rem;
   background-color: black;
   border-radius: 50%;
   opacity: 0.75;
-  transition: opacity ease 250ms ;
+  transition: opacity ease 250ms;
 }
 
 /* FIN CARRROUSEL*/
 
-
 #product {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 10px;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #placeholderCarousel {
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
+  max-height: 500px;
 
   background-color: grey;
 
@@ -123,23 +133,20 @@ body {
 }
 
 #productMainSection {
-  height: 500px;
-  width: 500px;
-  margin: 2em;
+  max-height: 500px;
+  max-width: 500px;
   display: grid;
-  justify-content: left;
+  justify-content: right;
 }
 
 #productName {
   font-size: 2rem;
   font-weight: 600;
-
   padding-bottom: 1rem;
 }
 
 #productDetails {
   display: grid;
-
 }
 
 .detail {
@@ -147,7 +154,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 4rem;
-
   padding-left: 2em;
 }
 
@@ -157,15 +163,19 @@ body {
 }
 
 .buyBtn {
-    font-size: 1.8rem;
-    font-weight: 600;
-  
-    background-color: rgb(88, 173, 88);
-    color: white;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px rgb(0, 75, 0);
-  
-    margin-top: 1.5em;
-    padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: plum;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px purple;
+  margin: 30px 0 50px 0;
+  padding: 1rem;
+  transition: 0.5 ease-in-out;
+}
 
-  }
+.buyBtn:hover {
+  border: transparent 3px solid;
+  color: purple;
+}

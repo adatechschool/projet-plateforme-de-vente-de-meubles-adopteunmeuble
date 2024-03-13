@@ -1,4 +1,5 @@
 function ProductDetails({ productData }) {
+    console.log(productData);
     const renderDetail = (label, value) => (
         <div className="detail">
             <div className="detail-label">{label}</div>

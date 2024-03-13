@@ -16,6 +16,16 @@ const meublesRouter = require("./routes/meubles.routes");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+//Middleware pour gérer les CORS
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Content, Accept, Authorization"
+  );
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 //Importer les routes exportées depuis le fichier meubles.routes.js
 app.use("/products", meublesRouter);
 
