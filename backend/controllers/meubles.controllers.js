@@ -39,8 +39,8 @@ module.exports.createFurniture = async (req, res) => {
       color: req.body.color,
       dimensions: req.body.dimensions,
       material: req.body.material,
-      condition: req.body.condition,
-      status: req.body.status,
+      item_condition: req.body.condition,
+      item_status: req.body.status,
       author: req.body.author,
     });
     res.status(201).json(meuble);
@@ -61,8 +61,8 @@ module.exports.updateFurniture = async (req, res) => {
         color: req.body.color,
         dimensions: req.body.dimensions,
         material: req.body.material,
-        condition: req.body.condition,
-        status: req.body.status,
+        item_condition: req.body.condition,
+        item_status: req.body.status,
         // req.body.author
       },
       {

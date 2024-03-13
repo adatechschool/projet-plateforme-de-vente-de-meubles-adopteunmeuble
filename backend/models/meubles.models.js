@@ -37,10 +37,10 @@ const Furniture = sequelize.define(
         material: {
             type: DataTypes.STRING,
         },
-        condition: {
+        item_condition: {
             type: DataTypes.STRING,
         },
-        status: {
+        item_status: {
             type: DataTypes.BOOLEAN,
         },
     },
