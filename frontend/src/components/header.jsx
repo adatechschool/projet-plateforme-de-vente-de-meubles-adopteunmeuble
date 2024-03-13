@@ -55,11 +55,11 @@ function Header() {
                 </svg>
             <h2 id="website-title">Adopte un Meuble</h2>
                 <div id="user-actions">
-                    <div class="icon-text-container">
-                    <img src="../../public/img/icons8-coeur-avec-pouls-50.png" alt="Wishlist" class="icon"/> Wishlist
+                    <div className="icon-text-container">
+                    <img src="../../public/img/icons8-coeur-avec-pouls-50.png" alt="Wishlist" className="icon"/> Wishlist
                     </div>
-                    <div class="icon-text-container">
-                        <img src="../../public/img/icons8-utilisateur-30.png" alt="User Account" class="icon"/> User Account
+                    <div className="icon-text-container">
+                        <img src="../../public/img/icons8-utilisateur-30.png" alt="User Account" className="icon"/> User Account
                     </div>
                 </div>
         </div>        

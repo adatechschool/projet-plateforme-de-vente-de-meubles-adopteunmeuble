@@ -16,12 +16,6 @@ body {
   color: whitesmoke;
 }
 
-#logo-h {
-  justify-self: left;
-  max-width: 100px;
-  padding: 0 30px;
-}
-
 #website-title {
   justify-content: center;
   align-items: center;

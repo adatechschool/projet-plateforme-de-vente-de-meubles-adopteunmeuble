@@ -2,27 +2,30 @@ import Sticker from "./sticker"
 import "../../styles/components/sticker.css"
 import { useEffect } from "react";
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 // FETCH : Fonction qui va récupérer les données de la base pour le catalogue complet des meubles : 
 export async function getData() {
-    const response = await fetch(`http://localhost:3000/`);
+    const response = await fetch(`http://localhost:3000/products`);
     const json = await response.json();
+    console.log(json)
     return json;
 }
 
 function StickersGrid() {
     const [selectedRadio, setSelectedRadio] = useState("");
     const radios = ["Chambre", "Salon", "Cuisine", "Salle de Bain", "Entrée"];
-    const [catalog, setCatalog] = useState([]);
+    // const [catalog, setCatalog] = useState([]);
 
-    useEffect(() => {
-        async function loadData() {
-            const catalog = await getData();
-            setCatalog(catalog);
-        }
-        loadData();
-    }, []);
+    // useEffect(() => {
+    //     async function loadData() {
+    //         const catalog = await getData();
+    //         setCatalog(catalog);
+    //     }
+    //     loadData();
+    // }, []);
 
+    const catalog = useLoaderData()
     return (
         <div className="products">
         <ul className="radio-container">

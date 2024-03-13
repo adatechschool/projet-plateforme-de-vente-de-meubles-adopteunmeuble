@@ -38,10 +38,7 @@ module.exports.getFurnitureById = async (req, res, next) => {
         throw new Error();
         // res.status(404).json({ error: "Furniture item not found" });
     }
-    res.json({
-        details: furnitureItem,
-        // photos : await photoItem
-    });
+    res.json(furnitureItem);
     // } catch (error) {
     //   next(new Error("Impossible de récupérer les données", { cause: 404 }));
     //   // res.status(500).json({ error: error.message });
