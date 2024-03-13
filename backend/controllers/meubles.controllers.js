@@ -13,7 +13,7 @@ module.exports.getFurniture = async (req, res) => {
 // ! Requête non-fonctionnelle, affiche l'erreur : "MeublesModel.findById is not a function
 module.exports.getFurnitureById = async (req, res) => {
   try {
-    const furnitureItem = await MeublesModel.findById(req.params.id);
+    const furnitureItem = await MeublesModel.findByPk(req.params.id);
     if (!furnitureItem) {
       return res.status(404).json({ error: "Furniture item not found" });
     }
