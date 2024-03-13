@@ -1,10 +1,8 @@
 //code Sequelize pour l'initiation de la base de données avec une nouvelle importation pour DataTypes et la création d'un modèle pour la table meubles
 const { Sequelize, DataTypes } = require("sequelize");
-const PhotoModel = require("../models/photo.models");
 
 //Importation de la connexion à la base de données
 const sequelize = require("../config/createDB");
-const Photo = require("../models/photo.models");
 
 //Le sequelize.define() définit un nouveau modèle, qui représente un tableau dans la base de données.
 //Si vous avez besoin de définir une valeur, vous pouvez utiliser defaultValue: "value"
@@ -51,8 +49,6 @@ const Furniture = sequelize.define(
     timestamps: true,
   }
 );
-
-Furniture.hasMany(PhotoModel);
 
 //Demande à Sequelize de faire quelques choses à la base de données :
 //Avec cet appel, Sequelize effectuera automatiquement une requête SQL à la base de données
