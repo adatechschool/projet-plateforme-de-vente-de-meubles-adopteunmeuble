@@ -56,10 +56,34 @@ const Furniture = sequelize.define("furniture", {
   },
 });
 
+const Photo = sequelize.define(
+  "photo",
+  {
+    id_item: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    photo_rank: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    src: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    alt: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    timestamps: false, 
+  }
+);
+
 // ? Sequelize will automatically perform an SQL query to the database and create a table, printing the message Book table created successfully!
 // ? Vérifier l'utilité de la fonction !
-sequelize
-  .sync()
+sequelize.sync()
   .then(() => {
     console.log("Furniture table created successfully!");
   })

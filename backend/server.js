@@ -2,15 +2,15 @@ require("dotenv").config({ debug: true });
 const express = require("express");
 const app = express();
 const port = 3000;
-const { Sequelize } = require("sequelize");
+// const { Sequelize } = require("sequelize");
 const meublesRouter = require("./routes/meubles.routes");
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  { dialect: "mysql", host: process.env.DB_HOST, port: process.env.DB_PORT }
-);
+// const sequelize = new Sequelize(
+//   process.env.DB_NAME,
+//   process.env.DB_USER,
+//   process.env.DB_PASSWORD,
+//   { dialect: "mysql", host: process.env.DB_HOST, port: process.env.DB_PORT }
+// );
 
 //Middleware pour gérer les données au format  et les url encodées
 app.use(express.json());
@@ -27,16 +27,11 @@ app.use((req, res, next) => {
 });
 
 //Importer les routes exportées depuis le fichier meubles.routes.js
-app.use("/", meublesRouter);
+app.use("/products", meublesRouter);
 
 // Middleware for handling errors
 app.use((err, req, res, next) => {
-  if (err) {
-    console.error(err.stack);
-    res.status(500).send("Something broke!");
-  } else {
-    next();
-  }
+    res.status(err.statusCode || 500).json({ error: err.message});
 });
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

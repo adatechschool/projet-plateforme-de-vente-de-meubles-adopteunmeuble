@@ -24,3 +24,4 @@ api.js
 .vscode/
 .idea/
 00_archives/
+backend/sqlTests/testModel.js

@@ -6,6 +6,7 @@ const sequelize = require("../config/createDB");
 
 //Le sequelize.define() définit un nouveau modèle, qui représente un tableau dans la base de données.
 //Si vous avez besoin de définir une valeur, vous pouvez utiliser defaultValue: "value"
+
 const Furniture = sequelize.define(
   "furniture",
   {
@@ -37,10 +38,10 @@ const Furniture = sequelize.define(
     material: {
       type: DataTypes.STRING,
     },
-    condition: {
+    item_condition: {
       type: DataTypes.STRING,
     },
-    status: {
+    item_status: {
       type: DataTypes.BOOLEAN,
     },
   },
