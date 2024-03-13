@@ -1,17 +1,27 @@
-import React from 'react';
-import '../styles/components/header.css'; // Import the CSS file
-
+import React from "react";
+import "../styles/components/header.css"; // Import the CSS file
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
         <div id="header">
-            <svg id="logo-h" alt="logo Adopte un meuble" version="1.0" xmlns="http://www.w3.org/2000/svg"
-                width="270.000000pt" height="302.000000pt" viewBox="0 0 270.000000 302.000000"
-                preserveAspectRatio="xMidYMid meet">
-
-                <g transform="translate(0.000000,302.000000) scale(0.100000,-0.100000)"
-                fill="#000000" stroke="none">
-                <path d="M0 1510 l0 -1510 1350 0 1350 0 0 1510 0 1510 -1350 0 -1350 0 0
+            <svg
+                id="logo-h"
+                alt="logo Adopte un meuble"
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="270.000000pt"
+                height="302.000000pt"
+                viewBox="0 0 270.000000 302.000000"
+                preserveAspectRatio="xMidYMid meet"
+            >
+                <g
+                    transform="translate(0.000000,302.000000) scale(0.100000,-0.100000)"
+                    fill="#000000"
+                    stroke="none"
+                >
+                    <path
+                        d="M0 1510 l0 -1510 1350 0 1350 0 0 1510 0 1510 -1350 0 -1350 0 0
                 -1510z m2094 1349 c129 -90 132 -100 46 -159 l-60 -41 71 -102 c39 -56 121
                 -175 182 -264 109 -158 111 -161 133 -146 29 19 55 10 76 -25 l17 -29 -74 -51
                 -75 -50 -20 28 c-25 36 -25 56 0 72 11 7 20 16 20 21 0 13 -351 517 -361 517
@@ -46,23 +56,41 @@ function Header() {
                 22 -102 0 -106 1 -117 25 -8 19 -8 28 2 40 18 22 230 22 264 0z m1028 -1192
                 c95 -86 27 -224 -100 -205 -38 5 -89 52 -94 85 -18 116 111 196 194 120z
                 m-586 -7 c32 -32 39 -54 34 -101 -7 -69 -86 -118 -154 -95 -48 16 -81 63 -81
-                118 0 37 5 48 37 78 32 28 45 34 84 34 39 0 51 -5 80 -34z"/>
-                <path d="M2217 213 c-15 -14 -6 -53 14 -64 18 -9 25 -7 41 9 16 16 18 23 9 41
-                -11 20 -50 29 -64 14z"/>
-                <path d="M1627 213 c-14 -14 -6 -53 13 -63 28 -15 65 22 50 50 -10 19 -49 27
-                -63 13z"/>
+                118 0 37 5 48 37 78 32 28 45 34 84 34 39 0 51 -5 80 -34z"
+                    />
+                    <path
+                        d="M2217 213 c-15 -14 -6 -53 14 -64 18 -9 25 -7 41 9 16 16 18 23 9 41
+                -11 20 -50 29 -64 14z"
+                    />
+                    <path
+                        d="M1627 213 c-14 -14 -6 -53 13 -63 28 -15 65 22 50 50 -10 19 -49 27
+                -63 13z"
+                    />
                 </g>
-                </svg>
+            </svg>
             <h2 id="website-title">Adopte un Meuble</h2>
-                <div id="user-actions">
-                    <div className="icon-text-container">
-                    <img src="../../public/img/icons8-coeur-avec-pouls-50.png" alt="Wishlist" className="icon"/> Wishlist
-                    </div>
-                    <div className="icon-text-container">
-                        <img src="../../public/img/icons8-utilisateur-30.png" alt="User Account" className="icon"/> User Account
-                    </div>
+            <Link to="/newFurniture">
+                <button>Post an ad</button>
+            </Link>
+            <div id="user-actions">
+                <div className="icon-text-container">
+                    <img
+                        src="../../public/img/icons8-coeur-avec-pouls-50.png"
+                        alt="Wishlist"
+                        className="icon"
+                    />{" "}
+                    Wishlist
                 </div>
-        </div>        
+                <div className="icon-text-container">
+                    <img
+                        src="../../public/img/icons8-utilisateur-30.png"
+                        alt="User Account"
+                        className="icon"
+                    />{" "}
+                    User Account
+                </div>
+            </div>
+        </div>
     );
 }
 

@@ -1,5 +1,5 @@
 import Sticker from "./sticker"
-import "../../styles/components/sticker.css"
+import "../styles/components/sticker.css"
 import { useEffect } from "react";
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
