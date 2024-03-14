@@ -32,13 +32,13 @@ function ProductForm() {
   });
 
   // Gestion du changement des champs du formulaire
-  // const handleChange = (event) => {
-  //   // setInputValue(event.target.value);
-  //   setInputValue({
-  //     ...inputValue,
-  //     [event.target.name]: event.target.value,
-  //   });
-  // };
+  const handleChange = (event) => {
+    // setInputValue(event.target.value);
+    setInputValue({
+      ...inputValue,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   // Même si les informations du produits ne seront pas changées après le dépôt de l'annonce du produit,
   // il est utile de garder la fonction "useState" lors du remplissage du formulaire au cas où si les données rentrées ne sont pas correctes.
@@ -58,7 +58,7 @@ function ProductForm() {
   const {
     register,
     handleSubmit,
-    // formState: { errors },
+    formState: { errors },
   } = useForm();
 
   // Fonction de soumission du formulaire
@@ -80,19 +80,16 @@ function ProductForm() {
       <input
         name="title"
         type="text"
-        value={inputValue.title}
-        // onChange={handleChange}
+        onChange={handleChange}
         {...register("title", { required: true })} // Champ à valider
       />
-      {/* On peut utiliser l'objet "errors" pour afficher les éventuelles erreurs de validation.*/}
-      {/* {errors.title && <p>Title is required and must be valid</p>} */}
+      {errors.title && <p>Title is required and must be valid</p>}
       <br />
       <label htmlFor="category">
-        Select a category : 
+        Select a category :
         <select
           name="category"
-          value={inputValue.category}
-          // onChange={handleChange}
+          onChange={handleChange}
           {...register("category", { required: true })}
         >
           <option value="">Select a category</option>
@@ -118,38 +115,28 @@ function ProductForm() {
           <option value="carpet">Carpet</option>
           <option value="other">Autre</option>
         </select>
-        {/* {errors.category && <p>Category is required and must be valid</p>} */}
+        {errors.category && <p>Category is required and must be valid</p>}
       </label>
       <br />
       <label htmlFor="picture">
         Add a picture :
         <br />
-        <input
-          name="picture"
-          type="file"
-          // onChange={handleChange}
-        />
+        <input name="picture" type="file" onChange={handleChange} />
       </label>
       <br />
       <label htmlFor="description">
         Description :
         <textarea
-          // type="texte" (pas utile car déjà dans un textarea)
           name="description"
-          value={inputValue.description}
-          // onChange={handleChange}
+          onChange={handleChange}
           {...register("description", { required: true })}
         />
-        {/* {errors.description && <p>Category is required and must be valid</p>} */}
+        {errors.description && <p>Category is required and must be valid</p>}
       </label>
       <br />
       <label htmlFor="color">
         Color :
-        <select
-          name="color"
-          value={inputValue.color}
-          // onChange={handleChange}
-        >
+        <select name="color" onChange={handleChange}>
           <option value="">Select a color</option>
           <option value="black">Black</option>
           <option value="blue">Blue</option>
@@ -165,21 +152,12 @@ function ProductForm() {
       <br />
       <label htmlFor="dimensions">
         Dimensions :
-        <input
-          name="dimensions"
-          type="text"
-          value={inputValue.dimensions}
-          // onChange={handleChange}
-        />
+        <input name="dimensions" type="text" onChange={handleChange} />
       </label>
       <br />
       <label htmlFor="material">
         Material :
-        <select
-          name="material"
-          value={inputValue.material}
-          // onChange={handleChange}
-        >
+        <select name="material" onChange={handleChange}>
           <option value="">Select a material</option>
           <option value="steel">Steel</option>
           <option value="wood">Wood</option>
@@ -204,11 +182,7 @@ function ProductForm() {
       <br />
       <label htmlFor="condition">
         Condition :
-        <select
-          name="condition"
-          value={inputValue.condition}
-          // onChange={handleChange}
-        >
+        <select name="condition" onChange={handleChange}>
           <option value="">Select a condition</option>
           <option value="like-new">Like new</option>
           <option value="very-good-condition">Very good condition</option>
@@ -223,11 +197,10 @@ function ProductForm() {
           name="price"
           type="number"
           placeholder="0000"
-          value={inputValue.price}
-          // onChange={handleChange}
+          onChange={handleChange}
           {...register("price", { required: true })}
         />
-        {/* {errors.price && <p>Price is required and must be valid</p>} */}
+        {errors.price && <p>Price is required and must be valid</p>}
       </label>
       <br />
       <label htmlFor="status">
@@ -235,10 +208,9 @@ function ProductForm() {
         <input
           name="status"
           type="checkbox"
-          checked={inputValue.status}
-          // onChange={(event) =>
-          //   setInputValue({ ...inputValue, status: event.target.checked })
-          // }
+          onChange={(event) =>
+            setInputValue({ ...inputValue, status: event.target.checked })
+          }
         />
       </label>
 
@@ -246,12 +218,7 @@ function ProductForm() {
         Submit
       </button>
       <br />
-      <h5>Resume of your product</h5>
-      <p>Title: {inputValue.title}</p>
-      <p>Category: {inputValue.category}</p>
-      <p>Description: {inputValue.description}</p>
-      <p id="end">Price: {inputValue.price}</p>
-      
+      {/* // Imaginer un aperçu de l'annonce en dernier */}
     </form>
   );
 }
