@@ -15,7 +15,7 @@ module.exports.getFurniture = async (req, res, next) => {
         const newMeubles = meubles.map((meuble) => {
             // console.log(meuble.id);
             meuble["picture"] = photoItems.find(
-                (photo) => photo.furnitureId === meuble.id
+                (photo) => photo.id_item === meuble.id
             );
             return meuble.picture;
         });
@@ -30,7 +30,7 @@ module.exports.getFurniture = async (req, res, next) => {
 module.exports.getFurnitureById = async (req, res, next) => {
     // try {
     const photoItems = PhotoModel.findAll({
-        where: { furnitureId: req.params.productId },
+        where: { id_item: req.params.productId },
     });
     const furnitureItem = await MeublesModel.findByPk(req.params.productId);
     furnitureItem["picture"] = await photoItems;
