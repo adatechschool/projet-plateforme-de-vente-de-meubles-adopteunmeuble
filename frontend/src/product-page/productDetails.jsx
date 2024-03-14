@@ -14,8 +14,8 @@ function ProductDetails({ productData }) {
         { label: "Dimensions", value: productData.dimensions },
         { label: "Couleur", value: productData.color },
         { label: "Matières", value: productData.material },
-        { label: "Condition", value: productData.condition },
-        { label: "Statut", value: productData.status ? "Disponible" : "Vendu" },
+        { label: "Condition", value: productData.item_condition },
+        { label: "Statut", value: productData.item_status ? "Disponible" : "Vendu" },
     ];
 
     return (
