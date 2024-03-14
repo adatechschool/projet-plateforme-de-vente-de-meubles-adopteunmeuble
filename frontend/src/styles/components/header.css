@@ -1,8 +1,8 @@
 :root {
   --header-bg-color: #556e8d;
-  --header-text-color: #693e43;
+  --header-text-color: pink;
   --title-color: #000; /* Black as the main color */
-  --title-hover-color: #333; /* Slightly lighter shade for hover */
+  --title-hover-color: grey; /* Slightly lighter shade for hover */
   --text-shadow-color: rgba(0, 0, 0, 0.2); /* Subtle shadow */
   --text-shadow-hover-color: rgba(
     0,
@@ -31,11 +31,11 @@
 
 #website-title {
   font-size: 48px;
-  background: linear-gradient(to right, #e30c25, #556e8d);
+  background: linear-gradient(to right, purple, lightblue);
   /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px plum;
   animation: title-gradient-animation 3s ease infinite;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }

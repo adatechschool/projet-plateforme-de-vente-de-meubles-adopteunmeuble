@@ -1,0 +1,38 @@
+form {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  background-color: rgba(173, 216, 230, 0.492);
+  border-radius: 20px;
+}
+
+h1 {
+  margin: 30px 0;
+}
+
+button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgba(221, 160, 221, 0.496);
+  color: #000;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+form label {
+  text-decoration: solid;
+}
+
+select,
+input {
+  color: purple;
+  margin: 5px 10px;
+  padding: 5px;
+}
+
+#end {
+  margin-bottom: 50px;
+}

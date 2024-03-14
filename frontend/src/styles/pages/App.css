@@ -5,6 +5,26 @@ body {
   padding: 0;
 }
 
+h1 {
+  text-align: center;
+  width: 70%;
+  text-shadow: 3px 3px 5px lightblue;
+}
+
+h2 {
+  text-align: center;
+  width: 70%;
+  text-shadow: 3px 3px 5px lightblue;
+  margin: 30px;
+}
+
+h5 {
+  text-align: center;
+  width: 70%;
+  text-shadow: 3px 3px 5px lightblue;
+  margin-top: 20px;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -16,7 +36,7 @@ body {
   align-items: center;
   place-items: center;
   width: 100vw;
-  background-color: blueviolet;
+  background-color: rgba(137, 43, 226, 0.832);
   color: whitesmoke;
 }
 
@@ -51,7 +71,7 @@ body {
   align-items: center;
   bottom: 0;
   padding: 1.5em;
-  background-color: rgb(73, 65, 81);
+  background-color: rgb(88, 76, 99);
   color: beige;
 }
 
@@ -104,7 +124,6 @@ body {
   border-radius: 50%;
   opacity: 0.75;
   transition: opacity ease 250ms;
-
 }
 
 .resizable-image {

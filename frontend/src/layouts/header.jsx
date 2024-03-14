@@ -70,7 +70,7 @@ function Header() {
             </svg>
             <h2 id="website-title">Adopte un Meuble</h2>
             <Link to="/newFurniture">
-                <button>Post an ad</button>
+                <button>Add a new furniture</button>
             </Link>
             <div id="user-actions">
                 <div className="icon-text-container">
