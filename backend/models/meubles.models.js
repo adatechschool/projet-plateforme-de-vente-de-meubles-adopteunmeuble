@@ -2,8 +2,13 @@
 const { Sequelize, DataTypes } = require("sequelize");
 
 //Importation de la connexion à la base de données
-const sequelize = require("../config/createDB");
-
+// const sequelize = require("../config/createDB");
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  { dialect: "mysql", host: process.env.DB_HOST, port: process.env.DB_PORT }
+);
 //Le sequelize.define() définit un nouveau modèle, qui représente un tableau dans la base de données.
 //Si vous avez besoin de définir une valeur, vous pouvez utiliser defaultValue: "value"
 
@@ -46,7 +51,7 @@ const Furniture = sequelize.define(
     },
   },
   {
-    timestamps: true,
+    timestamps: false,
   }
 );
 
