@@ -64,7 +64,7 @@ id, nom, prénom, email, mot de passe (+ sécurisation)
 # Organisation
 
 ## Répartition des équipes (semaine 1) : 
-- Back : Nadège, Apolline, Nicolas
+- Back : Nadège, Apolline, Nassim, Nicolas
 - Front : Marie, Axel, Angie, Sam
 - TechLead : Sam
 
