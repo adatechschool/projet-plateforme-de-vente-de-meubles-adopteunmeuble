@@ -1,50 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
   max-width: 100%;
   max-height: 100vh;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 h1 {
   text-align: center;
   width: 70%;
-  text-shadow: 3px 3px 5px lightblue;
-}
-
-h2 {
-  text-align: center;
-  width: 70%;
-  text-shadow: 3px 3px 5px lightblue;
-  margin: 30px;
 }
 
 h5 {
   text-align: center;
   width: 70%;
-  text-shadow: 3px 3px 5px lightblue;
   margin-top: 20px;
 }
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-#header {
-  display: grid;
-  grid-template-columns: 4fr 8fr 3fr 1fr;
-  justify-items: center;
-  align-items: center;
-  place-items: center;
-  width: 100vw;
-  background-color: rgba(137, 43, 226, 0.832);
-  color: whitesmoke;
-}
-
-#website-title {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
 }
 
 #wishlist,
@@ -71,12 +47,13 @@ h5 {
   align-items: center;
   bottom: 0;
   padding: 1.5em;
-  background-color: rgb(88, 76, 99);
-  color: beige;
+  background-color: pink;
+  color: black;
 }
 
 #footer a {
-  color: rgb(211, 174, 245);
+  color: black;
+  font-size: 14px;
 }
 
 /*FIN FOOTER*/
@@ -153,7 +130,7 @@ h5 {
   max-height: 500px;
   max-width: 500px;
   display: grid;
-  justify-content: right;
+  justify-content: center;
 }
 
 #productName {
@@ -183,16 +160,16 @@ h5 {
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: 600;
-  background-color: plum;
+  background: black;
   color: white;
-  border-radius: 10px;
-  box-shadow: 3px 3px 3px purple;
-  margin: 30px 0 50px 0;
-  padding: 1rem;
+  border-radius: 30px;
+  margin: 30px 0 30px 0;
+  max-width: 250px;
   transition: 0.5 ease-in-out;
 }
 
 .buyBtn:hover {
-  border: transparent 3px solid;
-  color: purple;
+  background: pink;
+  color: black;
+  transition: 0.5s;
 }

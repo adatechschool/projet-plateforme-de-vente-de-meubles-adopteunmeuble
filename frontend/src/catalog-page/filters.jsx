@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
 const Products = () => {
   const [data, setData] = useState([]);
   const [rangeValue, setRangeValue] = useState(6);
@@ -9,8 +8,7 @@ const Products = () => {
 
   // Le useEffect se joue lorsque le composant est monté
   useEffect(() => {
-    fetch(`http://localhost:3000/`)
-    .then((response) => setData(response.data))
+    fetch(`http://localhost:3000/`).then((response) => setData(response.data));
   }, []);
 
   return (

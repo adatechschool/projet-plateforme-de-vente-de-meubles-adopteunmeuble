@@ -32,13 +32,13 @@ function ProductForm() {
   });
 
   // Gestion du changement des champs du formulaire
-  // const handleChange = (event) => {
-  //   // setInputValue(event.target.value);
-  //   setInputValue({
-  //     ...inputValue,
-  //     [event.target.name]: event.target.value,
-  //   });
-  // };
+  const handleChange = (event) => {
+    // setInputValue(event.target.value);
+    setInputValue({
+      ...inputValue,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   // Même si les informations du produits ne seront pas changées après le dépôt de l'annonce du produit,
   // il est utile de garder la fonction "useState" lors du remplissage du formulaire au cas où si les données rentrées ne sont pas correctes.
@@ -58,7 +58,7 @@ function ProductForm() {
   const {
     register,
     handleSubmit,
-    // formState: { errors },
+    formState: { errors },
   } = useForm();
 
   // Fonction de soumission du formulaire
@@ -75,183 +75,157 @@ function ProductForm() {
     // La fonction "onSubmit" sera appelée lors de l'envoi du formulaire
     // et recevra un objet contenant les valeurs de chaque champ du formulaire.
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h2 className="post-an-ad">Add a new furniture</h2>
-      <label htmlFor="title">Enter a title :</label>
+      <h2 className="post-an-ad">Déposer une annonce</h2>
+      <label htmlFor="title">Titre :</label>
       <input
         name="title"
         type="text"
-        value={inputValue.title}
-        // onChange={handleChange}
+        onChange={handleChange}
         {...register("title", { required: true })} // Champ à valider
       />
-      {/* On peut utiliser l'objet "errors" pour afficher les éventuelles erreurs de validation.*/}
-      {/* {errors.title && <p>Title is required and must be valid</p>} */}
+      {errors.title && <p>Le titre est obligatoire et doit être valide</p>}
       <br />
       <label htmlFor="category">
-        Select a category : 
+        Catégorie :
         <select
           name="category"
-          value={inputValue.category}
-          // onChange={handleChange}
+          onChange={handleChange}
           {...register("category", { required: true })}
         >
-          <option value="">Select a category</option>
-          <option value="accessories">Accessories</option>
+          <option value="">Sélectionner une catégorie</option>
+          <option value="accessories">Accessoires</option>
           <option value="cabinet">Cabinet</option>
           <option value="bar">Bar</option>
-          <option value="bath">Bath & tub</option>
-          <option value="bookcase-shelf">Bookcase & shelf</option>
+          <option value="bath">Bain et baignoire</option>
+          <option value="bookcase-shelf">Bibliothèque et étagère</option>
           <option value="sideboard">Sideboard</option>
           <option value="desk">Bureau</option>
           <option value="sofa">Sofa</option>
-          <option value="dressing-table">Dressing-table</option>
-          <option value="armchair">Armchair</option>
-          <option value="bed">Bed</option>
+          <option value="coiffeuse">Coiffeuse</option>
+          <option value="fauteuil">Fauteuil</option>
+          <option value="lit">Lit</option>
           <option value="lighting">Lighting</option>
-          <option value="kitchen-furniture">Kitchen furniture</option>
-          <option value="garden-furniture">Kitchen furniture</option>
-          <option value="storage-furniture">Storage furniture</option>
-          <option value="bathroom-furniture">bathroom rurniture</option>
-          <option value="tv-cabinet">TV cabinet</option>
-          <option value="dining-table">Dining table</option>
-          <option value="bedside-table">Bedside table</option>
-          <option value="carpet">Carpet</option>
+          <option value="meuble-cuisine">Meuble-cuisine</option>
+          <option value="garden-furniture">Meubles de cuisine</option>
+          <option value="meubles de rangement">Meubles de rangement</option>
+          <option value="meuble-salle de bain">meuble-salle de bain</option>
+          <option value="tv-cabinet">Cabinet TV</option>
+          <option value="dining-table">Table à manger</option>
+          <option value="bedside-table">Table de chevet</option>
+          <option value="carpet">Moquette</option>
+
           <option value="other">Autre</option>
         </select>
-        {/* {errors.category && <p>Category is required and must be valid</p>} */}
+        {errors.category && (
+          <p>La catégorie est obligatoire et doit être valide</p>
+        )}
       </label>
       <br />
       <label htmlFor="picture">
-        Add a picture :
+        Ajouter une image :
         <br />
-        <input
-          name="picture"
-          type="file"
-          // onChange={handleChange}
-        />
+        <input name="picture" type="file" onChange={handleChange} />
       </label>
       <br />
       <label htmlFor="description">
         Description :
         <textarea
-          // type="texte" (pas utile car déjà dans un textarea)
           name="description"
-          value={inputValue.description}
-          // onChange={handleChange}
+          onChange={handleChange}
           {...register("description", { required: true })}
         />
-        {/* {errors.description && <p>Category is required and must be valid</p>} */}
+        {errors.description && (
+          <p>La description est obligatoire et doit être valide</p>
+        )}
       </label>
       <br />
       <label htmlFor="color">
-        Color :
-        <select
-          name="color"
-          value={inputValue.color}
-          // onChange={handleChange}
-        >
-          <option value="">Select a color</option>
-          <option value="black">Black</option>
-          <option value="blue">Blue</option>
-          <option value="brown">Brown</option>
-          <option value="gray">Gray</option>
-          <option value="green">Green</option>
-          <option value="pink">Pink</option>
-          <option value="red">Red</option>
-          <option value="yellow">Yellow</option>
-          <option value="white">White</option>
+        Couleur :
+        <select name="color" onChange={handleChange}>
+          <option value="">Sélectionner une couleur</option>
+          <option value="black">Noir</option>
+          <option value="blue">Bleu</option>
+          <option value="brown">Brun</option>
+          <option value="gray">Gris</option>
+          <option value="green">Vert</option>
+          <option value="pink">Rose</option>
+          <option value="red">Rouge</option>
+          <option value="yellow">Jaune</option>
+          <option value="white">Blanc</option>
         </select>
       </label>
       <br />
       <label htmlFor="dimensions">
         Dimensions :
-        <input
-          name="dimensions"
-          type="text"
-          value={inputValue.dimensions}
-          // onChange={handleChange}
-        />
+        <input name="dimensions" type="text" onChange={handleChange} />
       </label>
       <br />
       <label htmlFor="material">
-        Material :
-        <select
-          name="material"
-          value={inputValue.material}
-          // onChange={handleChange}
-        >
-          <option value="">Select a material</option>
-          <option value="steel">Steel</option>
-          <option value="wood">Wood</option>
+        Matière :
+        <select name="material" onChange={handleChange}>
+          <option value="">Sélectionner une matière</option>
+          <option value="steel">Acier</option>
+          <option value="bois">Bois</option>
           <option value="bronze">Bronze</option>
-          <option value="ceramic">Ceramic</option>
-          <option value="oak">Oak</option>
-          <option value="leather">Leather</option>
+          <option value="ceramic">Céramique</option>
+          <option value="oak">Chêne</option>
+          <option value="leather">Cuir</option>
           <option value="iron">Iron</option>
           <option value="formica">Formica</option>
-          <option value="lacquer">Lacquer</option>
-          <option value="marble">Marble</option>
-          <option value="metal">Metal</option>
-          <option value="stone">Stone</option>
-          <option value="pine">Pine</option>
+          <option value="laque">Laque</option>
+          <option value="marbre">Marbre</option>
+          <option value="metal">Métal</option>
+          <option value="stone">Pierre</option>
+          <option value="pin">Pin</option>
           <option value="plastic">Plastic</option>
-          <option value="rattan-wicker">Rattan & wicker</option>
-          <option value="fabric">Fabric</option>
-          <option value="velvet">Velvet</option>
-          <option value="glass">Glass</option>
+          <option value="rattan-wicker">Rotin et osier</option>
+          <option value="tissu">Tissu</option>
+          <option value="velours">Velours</option>
+          <option value="glass">Verre</option>
         </select>
       </label>
       <br />
       <label htmlFor="condition">
-        Condition :
-        <select
-          name="condition"
-          value={inputValue.condition}
-          // onChange={handleChange}
-        >
-          <option value="">Select a condition</option>
-          <option value="like-new">Like new</option>
-          <option value="very-good-condition">Very good condition</option>
-          <option value="good-condition">good condition</option>
-          <option value="fair-condition">Fair condition</option>
+        Etat :
+        <select name="condition" onChange={handleChange}>
+          <option value="">Sélectionner une condition</option>
+          <option value="like-new">Comme neuf</option>
+          <option value="very-good-condition">Très bon état</option>
+          <option value="good-condition">Bon état</option>
+          <option value="fair-condition">Etat moyen</option>
         </select>
       </label>
       <br />
       <label htmlFor="price">
-        Price :
+        Prix :
         <input
           name="price"
           type="number"
           placeholder="0000"
-          value={inputValue.price}
-          // onChange={handleChange}
+          onChange={handleChange}
           {...register("price", { required: true })}
         />
-        {/* {errors.price && <p>Price is required and must be valid</p>} */}
+        {errors.price && (
+          <p>La catégorie est obligatoire et doit être valide</p>
+        )}
       </label>
       <br />
       <label htmlFor="status">
-        <p>Check to confirm the availibility of your product !</p>
+        <p>Cocher pour confirmer la disponibilité du produit !</p>
         <input
           name="status"
           type="checkbox"
-          checked={inputValue.status}
-          // onChange={(event) =>
-          //   setInputValue({ ...inputValue, status: event.target.checked })
-          // }
+          onChange={(event) =>
+            setInputValue({ ...inputValue, status: event.target.checked })
+          }
         />
       </label>
 
       <button type="submit" class="submit-btn">
-        Submit
+        Publier
       </button>
       <br />
-      <h5>Resume of your product</h5>
-      <p>Title: {inputValue.title}</p>
-      <p>Category: {inputValue.category}</p>
-      <p>Description: {inputValue.description}</p>
-      <p id="end">Price: {inputValue.price}</p>
-      
+      {/* // Imaginer un aperçu de l'annonce en dernier */}
     </form>
   );
 }

@@ -1,7 +1,5 @@
 function BuyBtn() {
-    return (
-        <button className="buyBtn">ACHETER</button>
-    )
+  return <button className="buyBtn">Acheter</button>;
 }
 
 export default BuyBtn;

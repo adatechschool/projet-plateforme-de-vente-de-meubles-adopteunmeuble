@@ -4,14 +4,22 @@
   flex-direction: column;
 }
 
+.products h1{
+  font-size: 18px;
+  text-align: left;
+  padding: 0 20px;
+  margin: 10px 0;
+}
+
 .radio-container {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 20px;
-  background: rgba(211, 211, 211, 0.3);
-  border-radius: 20px;
   padding: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.452);
+}
+
+.radio-container:hover{
+  cursor: pointer;
 }
 
 label {
@@ -22,16 +30,16 @@ label {
 button {
   margin: 0 auto 20px;
   background: none;
+  max-width: 250px;
   padding: 4px 10px;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.5s;
 }
 
 button:hover {
-  border: whitesmoke solid 2px;
-  border-radius: 10px;
-  background-color: lightblue;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 ul {
@@ -41,13 +49,12 @@ ul {
 }
 
 .sticker {
-  border: black solid 2px;
   width: 300px;
   height: 300px;
   padding: 10px;
   margin: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.452);
   position: relative;
+  border-top: pink 1px solid;
 }
 
 .product-name {
@@ -55,19 +62,21 @@ ul {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
-  padding: 5px;
+  padding: 0px 5px;
+  color: black;
 }
 
 .product-category {
   text-align: right;
-  font-size: 10px;
-  background-color: rgba(211, 211, 211, 0.3);
+  font-size: 12px;
+  padding: 5px; 
 }
 
 .product-price {
   text-align: right;
+  color: rgb(255, 123, 145);
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   padding: 5px;
 }
 
@@ -82,18 +91,29 @@ ul {
   transition: 0.2s ease;
   position: absolute;
   bottom: 0px;
-  border-radius: 5px;
+  margin: 10px;
+  border-radius: 30px;
+  max-width: 110px;
 }
+
 .add-to-cart {
-  background-color: plum;
   right: 3px;
+  background: rgb(255, 123, 145);
+  max-width: 45px;
+  border: transparent;
 }
 .add-to-cart img {
-  max-width: 30px;
+  max-width: 25px;
 }
+
 .see-product {
-  background-color: pink;
+  background-color: transparent;
   left: 3px;
+}
+
+.see-product:hover{
+  background: pink;
+  transition: 0.5s;
 }
 
 #img-sticker {
