@@ -1,0 +1,57 @@
+version: "3"
+
+services:
+    #image docker mysql de notre version de mysql
+    db:
+        image: mysql:8.3
+        restart: always
+        env_file: db/.env
+        ports:
+            - 3306:3306
+
+
+    #Pour le backend, a la place d'aller telecharger une image en ligne (sur dockerhub) on va creer notre propre image a partir de notre code. backend/ va aller lire le Dockerfile:
+    backend:
+        build: backend/
+        env_file: backend/.env
+        depends_on:
+            - db
+        ports:
+            - 3000:3000
+
+    #de même pour le frontend (frontend/ va aller lire le Dockerfile)
+    frontend:
+        build: frontend/
+        depends_on:
+            - backend
+        ports:
+            - 5173:5173
+
+
+
+
+
+
+
+
+#note :
+
+# forcer rebuild :
+    # docker compose up --build
+
+# lancer docker sans encombrer le terminal :
+    #docker compose up dbmysql -d
+
+# voir les logs d'un conteneur en arriere plan (-d):
+    #docker compose logs nom_de_mon_contreneur
+
+#pour kill le projet d'un point de vue docker (sauf les volumes si il y en a):
+    #docker compose down
+
+
+# Comment démarrer avec docker :
+
+# commande : docker compose up db -d
+# commande : docker compose up backend -d
+# checker les logs : docker compose logs backend
+# lancer le front : docker compose up frontend

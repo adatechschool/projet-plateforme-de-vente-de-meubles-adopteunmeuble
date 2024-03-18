@@ -3,15 +3,16 @@ const { Sequelize, DataTypes } = require("sequelize");
 
 (async () => {
 
-//Initialisation de la connexion primaire à la base de données via Sequelize
-const sequelizeInit = new Sequelize(
-  "sys",
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  { dialect: "mysql", host: process.env.DB_HOST, port: process.env.DB_PORT }
-);
 
-await sequelizeInit.query("CREATE DATABASE IF NOT EXISTS `plateforme_de_meubles`;");
+// //Initialisation de la connexion primaire à la base de données via Sequelize
+// const sequelizeInit = new Sequelize(
+//   "sys",
+//   process.env.DB_USER,
+//   process.env.DB_PASSWORD,
+//   { dialect: "mysql", host: process.env.DB_HOST, port: process.env.DB_PORT }
+// );
+
+// await sequelizeInit.query("CREATE DATABASE IF NOT EXISTS `plateforme_de_meubles`;");
 
 // TODO Connexion à la BDD plateforme_de_meubles (via le fichier .env à créer !)
 const sequelize = new Sequelize(
@@ -83,7 +84,7 @@ const Photo = sequelize.define(
     },
   },
   {
-    timestamps: false, 
+    timestamps: false,
   }
 );
 
@@ -217,51 +218,51 @@ sequelize.sync()
             item_status: true,
             }
         ],
-    
+
          // Ajout des données photo après la création de la table Photo
         Photo.bulkCreate([
           { id_item: 1, photo_rank: 1, src: 'https://images.selency.com/24b02aaf-3b9c-4ad7-88b4-1bb2943ab33c', alt: 'Description de l’image 1' },
           { id_item: 1, photo_rank: 2, src: 'https://images.selency.com/5c19044b-59b9-474f-b8b0-47b9e7d3e48d', alt: 'Description de l’image 2' },
           { id_item: 1, photo_rank: 3, src: 'https://images.selency.com/978bc04c-0a27-4018-97d1-f2a083401fab', alt: 'Description de l’image 3' },
-    
+
           { id_item: 2, photo_rank: 1, src: 'https://images.selency.com/4fca6d94-e81b-4c50-a3f9-43a0b7493783', alt: 'Description de l’image 1' },
           { id_item: 2, photo_rank: 2, src: 'https://images.selency.com/4900bea4-bfa4-4131-b184-7b6177291873', alt: 'Description de l’image 2' },
           { id_item: 2, photo_rank: 3, src: 'https://images.selency.com/c9a2e528-6b0a-451f-801c-9d9b3ab322e9', alt: 'Description de l’image 3' },
-    
+
           { id_item: 3, photo_rank: 1, src: 'https://images.selency.com/ada20333-8956-4b6d-86fc-7c877d99ad60', alt: 'Description de l’image 1' },
           { id_item: 3, photo_rank: 2, src: 'https://images.selency.com/76bb9b56-6948-43e3-8511-f14919084371', alt: 'Description de l’image 2' },
           { id_item: 3, photo_rank: 3, src: 'https://images.selency.com/1f1ec512-41f1-4d52-a1c2-61dc0831f1e7', alt: 'Description de l’image 3' },
-    
+
           { id_item: 4, photo_rank: 1, src: 'https://images.selency.com/5d5faded-9ed7-49bf-bd07-17a98b4d7f0c', alt: 'Description de l’image 1' },
           { id_item: 4, photo_rank: 2, src: 'https://images.selency.com/ce21bd6c-d79b-434d-b72f-52b990404ceb', alt: 'Description de l’image 2' },
           { id_item: 4, photo_rank: 3, src: 'https://images.selency.com/3e2542f7-6d4c-4358-b74a-26793190518c', alt: 'Description de l’image 3' },
-    
+
           { id_item: 5, photo_rank: 1, src: 'https://images.selency.com/4d48ef0d-e97a-4710-9200-bf4f1aca09c7', alt: 'Description de l’image 1' },
           { id_item: 5, photo_rank: 2, src: 'https://images.selency.com/49d48f76-de07-428e-b2ca-642120613efc', alt: 'Description de l’image 2' },
           { id_item: 5, photo_rank: 3, src: 'https://images.selency.com/ddf183c0-175f-426f-a8a0-473629d96a59', alt: 'Description de l’image 3' },
-    
+
           { id_item: 6, photo_rank: 1, src: 'https://images.selency.com/8317c428-71ea-8409-a0bf-6098919deba0', alt: 'Description de l’image 1' },
           { id_item: 6, photo_rank: 2, src: 'https://images.selency.com/69f85e9d-5ffe-41cb-bc8f-281d69a6b708', alt: 'Description de l’image 2' },
           { id_item: 6, photo_rank: 3, src: 'https://images.selency.com/35212b24-8462-465c-94fc-618f60d85b68', alt: 'Description de l’image 3' },
-    
+
           { id_item: 7, photo_rank: 1, src: 'https://images.selency.com/22901fe1-e932-fde5-92ff-2ac64885c9de', alt: 'Description de l’image 1' },
           { id_item: 7, photo_rank: 2, src: 'https://images.selency.com/bb71c45b-8683-4d7b-9452-53952f63bb12', alt: 'Description de l’image 2' },
           { id_item: 7, photo_rank: 3, src: 'https://images.selency.com/ae00e2b8-ece2-4b60-b57a-983d65a1c396', alt: 'Description de l’image 3' },
-    
+
           { id_item: 8, photo_rank: 1, src: 'https://images.selency.com/e0c7d90f-4211-4c1f-9912-e2feef4a5d78', alt: 'Description de l’image 1' },
           { id_item: 8, photo_rank: 2, src: 'https://images.selency.com/6c3c820f-9091-4ba1-aed7-ddd1eee3ebb3', alt: 'Description de l’image 2' },
           { id_item: 8, photo_rank: 3, src: 'https://images.selency.com/4bf0fbe2-41aa-4d57-8650-8e366630ffab', alt: 'Description de l’image 3' },
-    
+
           { id_item: 9, photo_rank: 1, src: 'https://images.selency.com/f367a126-0834-42ac-9f67-b93611a1c490', alt: 'Description de l\'image 1' },
           { id_item: 9, photo_rank: 2, src: 'https://images.selency.com/991231c7-e641-49b0-86f8-149731548d01', alt: 'Description de l\'image 2' },
           { id_item: 9, photo_rank: 3, src: 'https://images.selency.com/2dc9e2fb-633b-487d-a97b-029fbb413e9f', alt: 'Description de l\'image 3' },
-    
+
           { id_item: 10, photo_rank: 1, src: 'https://images.selency.com/2fe63f03-d6bf-42f0-afe0-23c5b5c9f252', alt: 'Description de l\'image 1' },
           { id_item: 10, photo_rank: 2, src: 'https://images.selency.com/01b63ba8-7680-4e2f-a6c4-c52517e9c5ae', alt: 'Description de l\'image 2' },
           { id_item: 10, photo_rank: 3, src: 'https://images.selency.com/c098aab8-6d5a-4c26-83f1-da8f09ddf703', alt: 'Description de l\'image 3' },
-    
+
         ])
-    
+
         );
       })
       .then(() => {
