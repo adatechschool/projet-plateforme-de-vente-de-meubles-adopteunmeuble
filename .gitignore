@@ -8,11 +8,6 @@
 *.exe
 # Fichiers de configuration
 *.log
-*.env
-*.env.local
-*.env.development.local
-*.env.test.local
-*.env.production.local
 # Dossiers
 node_modules/
 build/
